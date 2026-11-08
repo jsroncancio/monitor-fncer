@@ -1,0 +1,59 @@
+name: Monitor instalación FNCER (UPME)
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 8:00 a.m. hora Colombia (UTC-5)
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Registrar aunque la capa traiga muchos menos proyectos (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos-fncer
+  cancel-in-progress: false
+
+jobs:
+  monitorear:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Descargar capa de UPME, detectar cambios y generar reporte
+        id: monitor
+        run: |
+          set +e
+          if [ "${{ github.event.inputs.forzar }}" = "true" ]; then FLAG=--forzar; fi
+          python main.py $FLAG
+          echo "codigo=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Guardar datos y reporte en el repositorio
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "FNCER UPME $(date -u +%Y-%m-%d)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi
+
+      - name: Marcar la corrida como fallida si UPME falló
+        if: steps.monitor.outputs.codigo != '0'
+        run: |
+          echo "::error::La descarga o validación de la capa de UPME falló. Revisa el paso anterior."
+          exit 1
