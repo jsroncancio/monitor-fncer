@@ -1,1 +1,3 @@
-fecha,tipo_cambio,capacidad_mw,delta_mw
+fecha,clave,tipo_cambio,nombre_proyecto,tipo_proyecto,tipo_tecnologia,estado_proyecto,departamento,municipio,capacidad_mw,delta_mw,valor_anterior,valor_nuevo
+2026-11-09,226284cff290,nuevo,GD LAS BATEAS,Generacion Distribuida,SOLAR,PRUEBAS,CESAR,AGUACHICA,0.99,0.99,,PRUEBAS
+2026-11-09,b19b29f09a94,nuevo,GD LAS DELICIAS,Generacion Distribuida,SOLAR,PRUEBAS,CESAR,AGUACHICA,0.99,0.99,,PRUEBAS
