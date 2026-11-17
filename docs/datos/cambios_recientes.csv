@@ -14,3 +14,5 @@ fecha,clave,tipo_cambio,nombre_proyecto,tipo_proyecto,tipo_tecnologia,estado_pro
 2026-11-14,32bb0c544f79,cambio_fecha,GD MARIANGEL,Generacion Distribuida,SOLAR,EN OPERACIÓN,CASANARE,YOPAL,0.99,0.0,2026-08-17,2026-11-12
 2026-11-14,fc5a9703adcc,cambio_estado,GD LEGACY,Generacion Distribuida,SOLAR,EN OPERACIÓN,CASANARE,YOPAL,0.99,0.0,PRUEBAS,EN OPERACIÓN
 2026-11-14,fc5a9703adcc,cambio_fecha,GD LEGACY,Generacion Distribuida,SOLAR,EN OPERACIÓN,CASANARE,YOPAL,0.99,0.0,2026-08-07,2026-11-12
+2026-11-17,6b92cb63af2c,nuevo,GD VILLA SOL I,Generacion Distribuida,SOLAR,PRUEBAS,NORTE DE SANTANDER,SAN JOSÉ DE CÚCUTA,0.99,0.99,,PRUEBAS
+2026-11-17,ba3e685b6767,nuevo,GD MOMPOX NORTE II,Generacion Distribuida,SOLAR,PRUEBAS,BOLÍVAR,SANTA CRUZ DE MOMPOX,0.996,0.996,,PRUEBAS
