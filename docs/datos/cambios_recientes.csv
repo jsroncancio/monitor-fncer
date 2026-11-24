@@ -23,3 +23,4 @@ fecha,clave,tipo_cambio,nombre_proyecto,tipo_proyecto,tipo_tecnologia,estado_pro
 2026-11-23,5175c5603d2f,nuevo,GD ERCO HOLANDA II,Generacion Distribuida,SOLAR,PRUEBAS,CÓRDOBA,SAHAGÚN,0.99,0.99,,PRUEBAS
 2026-11-23,acca5bb11414,nuevo,GD MGS 0030 COX CHIMA ORIENTE,Generacion Distribuida,SOLAR,PRUEBAS,CÓRDOBA,CHIMÁ,0.99,0.99,,PRUEBAS
 2026-11-23,b9d6ba1f08fd,nuevo,GD ERCO MARACANA I,Generacion Distribuida,SOLAR,PRUEBAS,SUCRE,SAMPUÉS,0.99,0.99,,PRUEBAS
+2026-11-24,56b269a9e7f4,retirado,GD BLANCA ENERGY XXXVIII,Generacion Distribuida,SOLAR,PRUEBAS,CESAR,VALLEDUPAR,0.9,-0.9,PRUEBAS,
